@@ -1,9 +1,16 @@
 package tdd.practice.productorderservice.product;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Component
+@RestController
+@RequestMapping("/products")
 public class ProductService {
     private final ProductPort productPort;
 
@@ -11,9 +18,11 @@ public class ProductService {
         this.productPort = productPort;
     }
 
-    @Transactional
-    public void addProduct(AddProductRequest request) {
+    @PostMapping
+    public ResponseEntity<Void> addProduct(@RequestBody AddProductRequest request) {
         Product product = new Product(request.getName(), request.getPrice(), request.getDiscountPolicy());
         productPort.save(product);
+
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }
