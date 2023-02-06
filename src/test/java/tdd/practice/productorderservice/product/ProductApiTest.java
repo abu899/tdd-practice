@@ -5,11 +5,16 @@ import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import tdd.practice.productorderservice.ApiTest;
+import tdd.practice.productorderservice.DatabaseCleanUp;
 
 class ProductApiTest extends ApiTest {
+
+    @Autowired
+    private DatabaseCleanUp databaseCleanUp;
 
     @Test
     void registerProduct() {
