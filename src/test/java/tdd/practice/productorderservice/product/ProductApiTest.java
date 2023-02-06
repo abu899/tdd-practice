@@ -3,13 +3,13 @@ package tdd.practice.productorderservice.product;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import tdd.practice.productorderservice.ApiTest;
 import tdd.practice.productorderservice.DatabaseCleanUp;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class ProductApiTest extends ApiTest {
 
@@ -18,28 +18,26 @@ class ProductApiTest extends ApiTest {
 
     @Test
     void registerProduct() {
-        AddProductRequest request = makeProductRequest();
         // API 요청
-        ExtractableResponse<Response> response = makeProductApiRequest(request);
+        ExtractableResponse<Response> response = ProductSteps.registerProduct();
 
-        Assertions.assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
+        assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
     }
 
-    private ExtractableResponse<Response> makeProductApiRequest(AddProductRequest request) {
-        return RestAssured.given().log().all()
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .body(request)
+    @Test
+    void findProduct() {
+        //상품 등록
+        ProductSteps.registerProduct();
+        Long productId = 1L;
+
+        // API 요청
+        ExtractableResponse<Response> response = RestAssured.given().log().all()
                 .when()
-                .post("/products")
-                .then()
-                .log().all().extract();
-    }
+                .get("/products/{productId}", productId)
+                .then().log().all()
+                .extract();
 
-    private AddProductRequest makeProductRequest() {
-        String name = "ProductName";
-        int price = 1000;
-        DiscountPolicy discountPolicy = DiscountPolicy.NONE;
-        return new AddProductRequest(name, price, discountPolicy);
+        assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.jsonPath().getString("name")).isEqualTo("ProductName");
     }
-
 }
