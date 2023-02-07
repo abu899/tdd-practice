@@ -22,4 +22,12 @@ public class ProductSteps {
         DiscountPolicy discountPolicy = DiscountPolicy.NONE;
         return new AddProductRequest(name, price, discountPolicy);
     }
+
+    public static ExtractableResponse<Response> findProductRequest(Long productId) {
+        return RestAssured.given().log().all()
+                .when()
+                .get("/products/{productId}", productId)
+                .then().log().all()
+                .extract();
+    }
 }

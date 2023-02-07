@@ -1,6 +1,5 @@
 package tdd.practice.productorderservice.product;
 
-import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
@@ -31,13 +30,10 @@ class ProductApiTest extends ApiTest {
         Long productId = 1L;
 
         // API 요청
-        ExtractableResponse<Response> response = RestAssured.given().log().all()
-                .when()
-                .get("/products/{productId}", productId)
-                .then().log().all()
-                .extract();
+        ExtractableResponse<Response> response = ProductSteps.findProductRequest(productId);
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
         assertThat(response.jsonPath().getString("name")).isEqualTo("ProductName");
     }
+
 }
