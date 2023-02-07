@@ -30,4 +30,8 @@ public class ProductSteps {
                 .then().log().all()
                 .extract();
     }
+
+    public static UpdateProductRequest updateProductRequest() {
+        return new UpdateProductRequest("Update Product", 2000, DiscountPolicy.NONE);
+    }
 }

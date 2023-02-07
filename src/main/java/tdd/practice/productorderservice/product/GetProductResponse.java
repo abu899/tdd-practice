@@ -5,10 +5,10 @@ import org.springframework.util.Assert;
 
 @Getter
 class GetProductResponse {
-    Long id;
-    String name;
-    int price;
-    DiscountPolicy discountPolicy;
+    private Long id;
+    private String name;
+    private int price;
+    private DiscountPolicy discountPolicy;
 
     public GetProductResponse(Long id, String name, int price, DiscountPolicy discountPolicy) {
         Assert.notNull(id, "상품 ID 는 필수");

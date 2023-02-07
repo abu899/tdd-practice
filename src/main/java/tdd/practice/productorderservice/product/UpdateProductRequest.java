@@ -1,13 +1,15 @@
 package tdd.practice.productorderservice.product;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
 
 @Getter
+@NoArgsConstructor
 class UpdateProductRequest {
-    private final String name;
-    private final int price;
-    private final DiscountPolicy discountPolicy;
+    private String name;
+    private int price;
+    private DiscountPolicy discountPolicy;
 
     public UpdateProductRequest(String name, int price, DiscountPolicy discountPolicy) {
         Assert.hasText(name, "상품명은 필수");
