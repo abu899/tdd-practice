@@ -19,7 +19,7 @@ class ProductApiTest extends ApiTest {
     @Test
     void registerProduct() {
         // API 요청
-        ExtractableResponse<Response> response = ProductSteps.registerProduct();
+        ExtractableResponse<Response> response = ProductSteps.makeProductRequest();
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
     }
@@ -27,7 +27,7 @@ class ProductApiTest extends ApiTest {
     @Test
     void findProduct() {
         //상품 등록
-        ProductSteps.registerProduct();
+        ProductSteps.makeProductRequest();
         Long productId = 1L;
 
         // API 요청
@@ -39,7 +39,7 @@ class ProductApiTest extends ApiTest {
 
     @Test
     void updateProduct() {
-        ProductSteps.registerProduct();
+        ProductSteps.makeProductRequest();
         Long productId = 1L;
 
         ExtractableResponse<Response> response = RestAssured.given().log().all()

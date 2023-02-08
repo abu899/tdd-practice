@@ -16,7 +16,7 @@ public class ProductServiceTest {
     @Test
     void updateProduct() {
         // given
-        productService.addProduct(ProductSteps.makeProductRequest());
+        productService.addProduct(ProductSteps.makeProduct());
         Long productId = 1L;
 
         //when
