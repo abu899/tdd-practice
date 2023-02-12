@@ -15,10 +15,10 @@ public class OrderSteps {
         return new CreateOrderRequest(productId, quantity);
     }
 
-    public static ExtractableResponse<Response> createOrderProductRequest(CreateOrderRequest request) {
+    public static ExtractableResponse<Response> createOrderProductRequest() {
         return RestAssured.given().log().all()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .body(request)
+                .body(createOrderProduct())
                 .when()
                 .post("/orders")
                 .then()

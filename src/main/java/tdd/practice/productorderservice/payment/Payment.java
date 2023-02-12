@@ -1,26 +1,30 @@
 package tdd.practice.productorderservice.payment;
 
+import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
 import tdd.practice.productorderservice.order.Order;
 
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
 class Payment {
-    private Order order;
-    private String cardNumber;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @OneToOne
+    private Order order;
+
+    private String cardNumber;
 
     public Payment(Order order, String cardNumber) {
         Assert.notNull(order, "주문 필수");
         Assert.hasText(cardNumber, "카드 번호 필수");
         this.order = order;
         this.cardNumber = cardNumber;
-    }
-
-    public void assignId(Long id) {
-        this.id = id;
     }
 
     public int getPrice() {

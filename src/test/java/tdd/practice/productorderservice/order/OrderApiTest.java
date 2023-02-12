@@ -16,9 +16,7 @@ public class OrderApiTest extends ApiTest {
     @Test
     void orderProduct() {
         ProductSteps.makeProductRequest();
-        CreateOrderRequest request = orderSteps.createOrderProduct();
-
-        ExtractableResponse<Response> response = orderSteps.createOrderProductRequest(request);
+        ExtractableResponse<Response> response = orderSteps.createOrderProductRequest();
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
 
