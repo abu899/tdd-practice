@@ -1,4 +1,4 @@
-package tdd.practice.productorderservice.order;
+package tdd.practice.productorderservice.order.application.service;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -6,6 +6,7 @@ import org.springframework.util.Assert;
 
 @Getter
 @NoArgsConstructor
+public
 class CreateOrderRequest {
     private Long productId;
     private int quantity;

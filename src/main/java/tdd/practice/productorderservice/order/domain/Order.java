@@ -1,11 +1,11 @@
-package tdd.practice.productorderservice.order;
+package tdd.practice.productorderservice.order.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
-import tdd.practice.productorderservice.product.Product;
+import tdd.practice.productorderservice.product.domain.Product;
 
 @Getter
 @Entity

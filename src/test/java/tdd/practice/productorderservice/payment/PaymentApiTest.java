@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import tdd.practice.productorderservice.ApiTest;
 import tdd.practice.productorderservice.order.OrderSteps;
+import tdd.practice.productorderservice.payment.application.service.PaymentRequest;
 import tdd.practice.productorderservice.product.ProductSteps;
 
 import static org.assertj.core.api.Assertions.assertThat;

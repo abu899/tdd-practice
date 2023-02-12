@@ -1,15 +1,16 @@
-package tdd.practice.productorderservice.payment;
+package tdd.practice.productorderservice.payment.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
-import tdd.practice.productorderservice.order.Order;
+import tdd.practice.productorderservice.order.domain.Order;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
+public
 class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

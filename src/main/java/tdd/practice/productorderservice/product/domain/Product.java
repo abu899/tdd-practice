@@ -1,4 +1,4 @@
-package tdd.practice.productorderservice.product;
+package tdd.practice.productorderservice.product.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

@@ -1,4 +1,4 @@
-package tdd.practice.productorderservice.payment;
+package tdd.practice.productorderservice.payment.application.service;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -6,6 +6,7 @@ import org.springframework.util.Assert;
 
 @Getter
 @NoArgsConstructor
+public
 class PaymentRequest {
     private Long orderId;
     private String cardNumber;

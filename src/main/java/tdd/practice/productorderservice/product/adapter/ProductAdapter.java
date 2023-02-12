@@ -1,6 +1,8 @@
-package tdd.practice.productorderservice.product;
+package tdd.practice.productorderservice.product.adapter;
 
 import org.springframework.stereotype.Component;
+import tdd.practice.productorderservice.product.application.port.ProductPort;
+import tdd.practice.productorderservice.product.domain.Product;
 
 @Component
 class ProductAdapter implements ProductPort {

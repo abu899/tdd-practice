@@ -1,9 +1,11 @@
-package tdd.practice.productorderservice.payment;
+package tdd.practice.productorderservice.payment.adapter;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import tdd.practice.productorderservice.order.Order;
-import tdd.practice.productorderservice.order.OrderRepository;
+import tdd.practice.productorderservice.order.domain.Order;
+import tdd.practice.productorderservice.order.adapter.OrderRepository;
+import tdd.practice.productorderservice.payment.application.port.PaymentPort;
+import tdd.practice.productorderservice.payment.domain.Payment;
 
 @Component
 @RequiredArgsConstructor

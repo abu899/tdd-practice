@@ -1,11 +1,11 @@
 package tdd.practice.productorderservice.order;
 
 import org.junit.jupiter.api.Test;
-import tdd.practice.productorderservice.product.DiscountPolicy;
-import tdd.practice.productorderservice.product.Product;
+import tdd.practice.productorderservice.order.domain.Order;
+import tdd.practice.productorderservice.product.domain.DiscountPolicy;
+import tdd.practice.productorderservice.product.domain.Product;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class OrderTest {
 

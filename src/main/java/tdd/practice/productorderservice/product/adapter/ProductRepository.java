@@ -1,6 +1,7 @@
-package tdd.practice.productorderservice.product;
+package tdd.practice.productorderservice.product.adapter;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import tdd.practice.productorderservice.product.domain.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 

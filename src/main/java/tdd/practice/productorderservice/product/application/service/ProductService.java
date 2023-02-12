@@ -1,9 +1,11 @@
-package tdd.practice.productorderservice.product;
+package tdd.practice.productorderservice.product.application.service;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import tdd.practice.productorderservice.product.application.port.ProductPort;
+import tdd.practice.productorderservice.product.domain.Product;
 
 @RestController
 @RequestMapping("/products")

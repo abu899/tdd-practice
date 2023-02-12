@@ -4,6 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.springframework.http.MediaType;
+import tdd.practice.productorderservice.payment.application.service.PaymentRequest;
 
 public class PaymentSteps {
     public static PaymentRequest createPayment() {

@@ -1,6 +1,7 @@
 package tdd.practice.productorderservice.product;
 
 import org.junit.jupiter.api.Test;
+import tdd.practice.productorderservice.product.domain.DiscountPolicy;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

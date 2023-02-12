@@ -3,7 +3,9 @@ package tdd.practice.productorderservice.order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import tdd.practice.productorderservice.product.ProductService;
+import tdd.practice.productorderservice.order.application.service.CreateOrderRequest;
+import tdd.practice.productorderservice.order.application.service.OrderService;
+import tdd.practice.productorderservice.product.application.service.ProductService;
 import tdd.practice.productorderservice.product.ProductSteps;
 
 @SpringBootTest

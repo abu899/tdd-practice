@@ -4,6 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.springframework.http.MediaType;
+import tdd.practice.productorderservice.order.application.service.CreateOrderRequest;
 
 public class OrderSteps {
     public OrderSteps() {

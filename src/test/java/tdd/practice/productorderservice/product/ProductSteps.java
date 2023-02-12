@@ -4,6 +4,9 @@ import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.springframework.http.MediaType;
+import tdd.practice.productorderservice.product.application.service.AddProductRequest;
+import tdd.practice.productorderservice.product.application.service.UpdateProductRequest;
+import tdd.practice.productorderservice.product.domain.DiscountPolicy;
 
 public class ProductSteps {
     public static AddProductRequest makeProduct() {

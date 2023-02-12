@@ -1,4 +1,4 @@
-package tdd.practice.productorderservice.payment;
+package tdd.practice.productorderservice.payment.application.service;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tdd.practice.productorderservice.order.Order;
+import tdd.practice.productorderservice.order.domain.Order;
+import tdd.practice.productorderservice.payment.application.port.PaymentPort;
+import tdd.practice.productorderservice.payment.domain.Payment;
 
 @RestController
 @RequestMapping("/payments")
+public
 class PaymentService {
     private final PaymentPort paymentPort;
 

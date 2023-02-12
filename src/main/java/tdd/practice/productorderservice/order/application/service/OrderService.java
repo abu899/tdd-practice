@@ -1,4 +1,4 @@
-package tdd.practice.productorderservice.order;
+package tdd.practice.productorderservice.order.application.service;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tdd.practice.productorderservice.product.Product;
+import tdd.practice.productorderservice.order.application.port.OrderPort;
+import tdd.practice.productorderservice.order.domain.Order;
+import tdd.practice.productorderservice.product.domain.Product;
 
 @RestController
 @RequestMapping("/orders")

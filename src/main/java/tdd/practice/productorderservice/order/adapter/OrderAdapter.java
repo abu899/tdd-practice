@@ -1,8 +1,10 @@
-package tdd.practice.productorderservice.order;
+package tdd.practice.productorderservice.order.adapter;
 
 import org.springframework.stereotype.Component;
-import tdd.practice.productorderservice.product.Product;
-import tdd.practice.productorderservice.product.ProductRepository;
+import tdd.practice.productorderservice.order.application.port.OrderPort;
+import tdd.practice.productorderservice.order.domain.Order;
+import tdd.practice.productorderservice.product.domain.Product;
+import tdd.practice.productorderservice.product.adapter.ProductRepository;
 
 @Component
 class OrderAdapter implements OrderPort {
